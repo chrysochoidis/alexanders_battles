@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class PersianInfantry extends BattleUnit
 {
-    
+    private GreenfootImage image = new GreenfootImage("persian_inf0_S.png");
+    private GreenfootImage image1 = new GreenfootImage("persian_inf0_M.png");
     public PersianInfantry(){
         super(1,6,6,250);
     }

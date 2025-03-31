@@ -10,6 +10,7 @@ public class Hypaspists extends BattleUnit
 {
     private GreenfootImage image = new GreenfootImage("hypaspists0_S.png");
     private GreenfootImage image1 = new GreenfootImage("hypaspists0_M.png");
+    
     public Hypaspists(){
         super(1,7,6,300);
     }

@@ -9,6 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Immortals extends BattleUnit
 
 {
+    
+    private GreenfootImage image = new GreenfootImage("immortals0_S.png");
+    private GreenfootImage image1 = new GreenfootImage("immortals0_M.png");
     public Immortals(){
         super(1,8,9,400);
     }
