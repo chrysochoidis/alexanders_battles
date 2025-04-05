@@ -12,7 +12,7 @@ public class Hypaspists extends BattleUnit
     private GreenfootImage image1 = new GreenfootImage("hypaspists0_M.png");
     
     public Hypaspists(){
-        super(1,7,6,300);
+        super(1,6,6,65,"Macedonia");
     }
     /**
      * Act - do whatever the Hypaspists wants to do. This method is called whenever
@@ -20,25 +20,24 @@ public class Hypaspists extends BattleUnit
      */
     public void act()
     {
+        if(this.getFights()){
+            handleFight();
+            checkIfSelected();
+        }
+        else{
         move();
         checkIfSelected();
-        //checkHealthState();
+        checkCollision();
+        checkHealthState();
         checkMovingState();
-    }
-    
-    public void checkIfSelected(){
-        if(Greenfoot.mouseClicked(this)){
-            Lv1_Granicus world = (Lv1_Granicus) getWorld();
-            world.setSelectedUnit(this);
         }
-        
     }
     
-      public void checkMovingState(){
+    public void checkMovingState(){
         if(this.getMovingState() == 0){
             setImage(image);
         }
-        else if (this.getMovingState() == 1){
+        else if (this.getMovingState() == 1 || this.getMovingState() == 2){
             setImage(image1);
         }
     }

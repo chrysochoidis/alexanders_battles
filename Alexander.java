@@ -8,15 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Alexander extends BattleUnit
 {
-    //0 for healthy, 1 for low damage, 2 for heavy damage, 3 routing
-    private int healthState ;
-    //0 for still and 1 for moving
+
 
     private GreenfootImage image = new GreenfootImage("alexander0_S.png");
     private GreenfootImage image1 = new GreenfootImage("alexander0_M.png");
 
     public Alexander(){
-        super(2,5,8,500); 
+        super(2,5,10,120,"Macedonia"); 
     }
     /**
      * Act - do whatever the Alexander wants to do. This method is called whenever
@@ -24,31 +22,33 @@ public class Alexander extends BattleUnit
      */
     public void act()
     {
+        if(this.getFights()){
+            handleFight();
+            checkIfSelected();
+        }
+        else{
         move();
         checkIfSelected();
-        //checkHealthState();
-        checkMovingState();       
+        checkCollision();
+        checkHealthState();
+        checkMovingState();
+
+    }
         
     }
-    
-    public void checkIfSelected(){
-        if(Greenfoot.mouseClicked(this)){
-            Lv1_Granicus world = (Lv1_Granicus) getWorld();
-            world.setSelectedUnit(this);
-        }
-        
-    }
-    
-    public void checkHealthState(){
-        
-    }
-    
+
     public void checkMovingState(){
         if(this.getMovingState() == 0){
             setImage(image);
         }
-        else if (this.getMovingState() == 1){
+        else if (this.getMovingState() == 1 || this.getMovingState() == 2){
             setImage(image1);
         }
     }
+    
+    
+    
+    
+    
+    
 }

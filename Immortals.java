@@ -13,7 +13,7 @@ public class Immortals extends BattleUnit
     private GreenfootImage image = new GreenfootImage("immortals0_S.png");
     private GreenfootImage image1 = new GreenfootImage("immortals0_M.png");
     public Immortals(){
-        super(1,8,9,400);
+        super(1,7,8,100,"Persia");
     }
     /**
      * Act - do whatever the Immortals wants to do. This method is called whenever
@@ -21,6 +21,23 @@ public class Immortals extends BattleUnit
      */
     public void act()
     {
-        // Add your action code here.
+       if(this.getFights()){
+            handleFight();
+        }
+        else{
+        move();
+        checkCollision();
+        checkHealthState();
+        checkMovingState();
+        }     
+    }
+    
+    public void checkMovingState(){
+        if(this.getMovingState() == 0){
+            setImage(image);
+        }
+        else if (this.getMovingState() == 1 || this.getMovingState() == 2){
+            setImage(image1);
+        }
     }
 }

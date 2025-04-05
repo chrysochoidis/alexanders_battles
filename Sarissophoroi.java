@@ -11,7 +11,7 @@ public class Sarissophoroi extends BattleUnit
     private GreenfootImage image = new GreenfootImage("sarissophoroi0_S.png");
     private GreenfootImage image1 = new GreenfootImage("sarissophoroi0_M.png");
     public Sarissophoroi(){
-        super(1,7,10,300);
+        super(1,5,8,60,"Macedonia");
     }
     /**
      * Act - do whatever the Sarissophoroi wants to do. This method is called whenever
@@ -19,25 +19,24 @@ public class Sarissophoroi extends BattleUnit
      */
     public void act()
     {
+        if(this.getFights()){
+            handleFight();
+            checkIfSelected();
+        }
+        else{
         move();
         checkIfSelected();
-        //checkHealthState();
+        checkCollision();
+        checkHealthState();
         checkMovingState();
-    }
-    
-    public void checkIfSelected(){
-        if(Greenfoot.mouseClicked(this)){
-            Lv1_Granicus world = (Lv1_Granicus) getWorld();
-            world.setSelectedUnit(this);
         }
-        
     }
     
-      public void checkMovingState(){
+     public void checkMovingState(){
         if(this.getMovingState() == 0){
             setImage(image);
         }
-        else if (this.getMovingState() == 1){
+        else if (this.getMovingState() == 1 || this.getMovingState() == 2){
             setImage(image1);
         }
     }

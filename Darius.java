@@ -11,7 +11,7 @@ public class Darius extends BattleUnit
     private GreenfootImage image = new GreenfootImage("darius0_S.png");
     private GreenfootImage image1 = new GreenfootImage("darius0_M.png");
     public Darius(){
-        super(2,6,7,450);
+        super(2,2,9,110,"Persia");
     }
     /**
      * Act - do whatever the Darius wants to do. This method is called whenever
@@ -19,6 +19,6 @@ public class Darius extends BattleUnit
      */
     public void act()
     {
-        
+        move();
     }
 }

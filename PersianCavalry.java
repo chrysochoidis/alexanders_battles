@@ -11,7 +11,7 @@ public class PersianCavalry extends BattleUnit
     private GreenfootImage image = new GreenfootImage("persianCav0_S.png");
     private GreenfootImage image1 = new GreenfootImage("persianCav0_M.png");
     public PersianCavalry(){
-        super(2,4,6,350);
+        super(2,4,7,75,"Persia");
     }
     /**
      * Act - do whatever the PersianCavalry wants to do. This method is called whenever
@@ -19,6 +19,14 @@ public class PersianCavalry extends BattleUnit
      */
     public void act()
     {
-        // Add your action code here.
+         if(this.getFights()){
+            handleFight();
+        }
+        else{
+        move();
+        checkCollision();
+        checkHealthState();
+        //checkMovingState();
+        }     
     }
 }

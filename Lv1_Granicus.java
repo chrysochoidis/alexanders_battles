@@ -28,71 +28,83 @@ public class Lv1_Granicus extends World
     {
 
         Alexander alexander = new Alexander();
-        addObject(alexander,765,640);
-        Darius darius = new Darius();
-        addObject(darius,503,75);
-        Hypaspists hypaspists = new Hypaspists();
-        addObject(hypaspists,344,669);
-        Hypaspists hypaspists2 = new Hypaspists();
-        addObject(hypaspists2,456,669);
-        Sarissophoroi sarissophoroi = new Sarissophoroi();
-        addObject(sarissophoroi,325,571);
-        Sarissophoroi sarissophoroi2 = new Sarissophoroi();
-        addObject(sarissophoroi2,480,564);
-        Sarissophoroi sarissophoroi3 = new Sarissophoroi();
-        addObject(sarissophoroi3,491,568);
-        Sarissophoroi sarissophoroi4 = new Sarissophoroi();
-        addObject(sarissophoroi4,617,569);
-        Sarissophoroi sarissophoroi5 = new Sarissophoroi();
-        addObject(sarissophoroi5,756,564);
-        sarissophoroi2.setLocation(250,568);
-        sarissophoroi2.setLocation(412,556);
-        sarissophoroi.setLocation(346,559);
-        sarissophoroi2.setLocation(445,566);
-        sarissophoroi.setLocation(346,564);
-        sarissophoroi4.setLocation(560,563);
-        sarissophoroi5.setLocation(657,559);
-        hypaspists.setLocation(189,637);
-        hypaspists2.setLocation(661,646);
-        alexander.setLocation(812,611);
-        Companions companions = new Companions();
-        addObject(companions,937,637);
-        PersianInfantry persianInfantry = new PersianInfantry();
-        addObject(persianInfantry,798,172);
-        PersianInfantry persianInfantry2 = new PersianInfantry();
-        addObject(persianInfantry2,650,170);
-        PersianInfantry persianInfantry3 = new PersianInfantry();
-        addObject(persianInfantry3,511,171);
-        PersianInfantry persianInfantry4 = new PersianInfantry();
-        addObject(persianInfantry4,412,175);
-        PersianInfantry persianInfantry5 = new PersianInfantry();
-        addObject(persianInfantry5,301,177);
-        PersianInfantry persianInfantry6 = new PersianInfantry();
-        addObject(persianInfantry6,181,184);
-        PersianInfantry persianInfantry7 = new PersianInfantry();
-        addObject(persianInfantry7,74,177);
-        PersianInfantry persianInfantry8 = new PersianInfantry();
-        addObject(persianInfantry8,107,255);
-        PersianInfantry persianInfantry9 = new PersianInfantry();
-        addObject(persianInfantry9,265,247);
-        PersianInfantry persianInfantry10 = new PersianInfantry();
-        addObject(persianInfantry10,399,235);
-        PersianInfantry persianInfantry11 = new PersianInfantry();
-        addObject(persianInfantry11,557,236);
-        PersianInfantry persianInfantry12 = new PersianInfantry();
-        addObject(persianInfantry12,729,227);
-        PersianInfantry persianInfantry13 = new PersianInfantry();
-        addObject(persianInfantry13,860,239);
+        addObject(alexander,602,550);
         Immortals immortals = new Immortals();
-        addObject(immortals,671,83);
+        addObject(immortals,629,191);
+        alexander.setLocation(615,306);
         Immortals immortals2 = new Immortals();
-        addObject(immortals2,262,82);
+        addObject(immortals2,547,191);
+        alexander.setLocation(592,307);
+        alexander.setLocation(606,287);
+        alexander.setLocation(695,379);
+        immortals.setLocation(730,203);
+        Companions companions = new Companions();
+        addObject(companions,447,481);
+        Hypaspists hypaspists = new Hypaspists();
+        addObject(hypaspists,614,620);
+        removeObject(hypaspists);
+        companions.setLocation(546,324);
+        Companions companions2 = new Companions();
+        addObject(companions2,264,438);
+        Companions companions3 = new Companions();
+        addObject(companions3,404,441);
+        Companions companions4 = new Companions();
+        addObject(companions4,132,462);
+        Companions companions5 = new Companions();
+        addObject(companions5,122,671);
+        Companions companions6 = new Companions();
+        addObject(companions6,271,635);
+        Companions companions7 = new Companions();
+        addObject(companions7,453,668);
+        alexander.setLocation(700,380);
+        Immortals immortals3 = new Immortals();
+        addObject(immortals3,852,213);
+        Immortals immortals4 = new Immortals();
+        addObject(immortals4,344,199);
+        Immortals immortals5 = new Immortals();
+        addObject(immortals5,199,194);
+        removeObject(companions7);
+        removeObject(companions6);
+        removeObject(companions5);
+        removeObject(companions2);
+        removeObject(companions3);
+        removeObject(companions);
+        removeObject(immortals3);
+        Sarissophoroi sarissophoroi = new Sarissophoroi();
+        addObject(sarissophoroi,520,379);
+        Hypaspists hypaspists2 = new Hypaspists();
+        addObject(hypaspists2,325,385);
+        Alexander alexander2 = new Alexander();
+        addObject(alexander2,934,87);
+        Alexander alexander3 = new Alexander();
+        addObject(alexander3,681,75);
+        alexander3.setLocation(694,79);
+        alexander2.setLocation(883,750);
+        sarissophoroi.setLocation(790,741);
+        companions4.setLocation(699,745);
+        hypaspists2.setLocation(614,760);
+        alexander.setLocation(307,390);
+        hypaspists2.setLocation(620,736);
+        hypaspists2.setLocation(611,730);
+        hypaspists2.setLocation(197,365);
+        companions4.setLocation(521,354);
+        sarissophoroi.setLocation(713,340);
+        immortals.setLocation(743,213);
+        removeObject(immortals);
+        removeObject(immortals2);
+        removeObject(immortals4);
+        removeObject(immortals5);
         PersianCavalry persianCavalry = new PersianCavalry();
-        addObject(persianCavalry,886,70);
+        addObject(persianCavalry,208,188);
         PersianCavalry persianCavalry2 = new PersianCavalry();
-        addObject(persianCavalry2,783,79);
+        addObject(persianCavalry2,329,189);
         PersianCavalry persianCavalry3 = new PersianCavalry();
-        addObject(persianCavalry3,898,136);
+        addObject(persianCavalry3,339,182);
+        PersianCavalry persianCavalry4 = new PersianCavalry();
+        addObject(persianCavalry4,541,203);
+        PersianCavalry persianCavalry5 = new PersianCavalry();
+        addObject(persianCavalry5,718,177);
+        persianCavalry2.setLocation(467,58);
     }
     
     public void act(){
@@ -102,6 +114,9 @@ public class Lv1_Granicus extends World
                 if(selectedUnit.getMovingState() == 1){
                     selectedUnit.newMovement(new Vector(selectedUnit.getRotation()-90,0.3));
                 }
+                else if(selectedUnit.getMovingState() == 2){
+                    selectedUnit.newMovement(new Vector(selectedUnit.getRotation()+90,0.1));
+                }
             }
             
             if(Greenfoot.isKeyDown("right")){
@@ -109,17 +124,26 @@ public class Lv1_Granicus extends World
                 if(selectedUnit.getMovingState() == 1){
                     selectedUnit.newMovement(new Vector(selectedUnit.getRotation()-90,0.3));
                 }
+                else if(selectedUnit.getMovingState() == 2){
+                    selectedUnit.newMovement(new Vector(selectedUnit.getRotation()+90,0.1));
+                }
             }
 
               if(Greenfoot.isKeyDown("up")){
-                selectedUnit.newMovement(new Vector(selectedUnit.getRotation()-90,0.3));
+                selectedUnit.newMovement(new Vector(selectedUnit.getRotation()-90,0.3 ));
                 selectedUnit.setMovingState(1);
             }
             
+            if(Greenfoot.isKeyDown("down")){
+                selectedUnit.newMovement(new Vector(selectedUnit.getRotation()+90,0.1));
+                selectedUnit.setMovingState(2);
+            }
             if(Greenfoot.isKeyDown("backspace")){
                 selectedUnit.stop();
                 selectedUnit.setMovingState(0);
             }
+            
+        
     
         }
     }

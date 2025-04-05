@@ -11,7 +11,7 @@ public class PersianInfantry extends BattleUnit
     private GreenfootImage image = new GreenfootImage("persian_inf0_S.png");
     private GreenfootImage image1 = new GreenfootImage("persian_inf0_M.png");
     public PersianInfantry(){
-        super(1,6,6,250);
+        super(1,3,5,55,"Persia");
     }
     /**
      * Act - do whatever the PersianInfrantry wants to do. This method is called whenever
@@ -19,6 +19,6 @@ public class PersianInfantry extends BattleUnit
      */
     public void act()
     {
-        // Add your action code here.
+        move();
     }
 }
