@@ -21,15 +21,15 @@ public class Immortals extends BattleUnit
      */
     public void act()
     {
-       if(this.getFights()){
+        if(this.getFights()){
             handleFight();
         }
         else{
         move();
         checkCollision();
         checkHealthState();
-        checkMovingState();
-        }     
+        //checkMovingState();
+        }      
     }
     
     public void checkMovingState(){

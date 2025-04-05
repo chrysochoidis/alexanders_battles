@@ -19,6 +19,14 @@ public class PersianInfantry extends BattleUnit
      */
     public void act()
     {
+         if(this.getFights()){
+            handleFight();
+        }
+        else{
         move();
+        checkCollision();
+        checkHealthState();
+        //checkMovingState();
+        }  
     }
 }

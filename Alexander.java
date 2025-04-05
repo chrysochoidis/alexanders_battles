@@ -45,10 +45,4 @@ public class Alexander extends BattleUnit
             setImage(image1);
         }
     }
-    
-    
-    
-    
-    
-    
 }

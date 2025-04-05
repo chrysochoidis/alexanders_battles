@@ -19,6 +19,14 @@ public class Darius extends BattleUnit
      */
     public void act()
     {
+        if(this.getFights()){
+            handleFight();
+        }
+        else{
         move();
+        checkCollision();
+        checkHealthState();
+        //checkMovingState();
+        }  
     }
 }
