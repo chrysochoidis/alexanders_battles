@@ -16,7 +16,7 @@ public class Lv1_Granicus extends World
     public Lv1_Granicus()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 850, 1); 
+        super(1000, 700, 1); 
         prepare();
     }
     
@@ -26,44 +26,47 @@ public class Lv1_Granicus extends World
      */
     private void prepare()
     {
-        PersianCavalry persianCavalry = new PersianCavalry();
-        addObject(persianCavalry,235,200);
-        PersianCavalry persianCavalry2 = new PersianCavalry();
-        addObject(persianCavalry2,364,207);
-        PersianCavalry persianCavalry3 = new PersianCavalry();
-        addObject(persianCavalry3,497,203);
-        PersianCavalry persianCavalry4 = new PersianCavalry();
-        addObject(persianCavalry4,619,198);
-        PersianCavalry persianCavalry5 = new PersianCavalry();
-        addObject(persianCavalry5,758,202);
-        PersianCavalry persianCavalry6 = new PersianCavalry();
-        addObject(persianCavalry6,886,200);
-        PersianInfantry persianInfantry = new PersianInfantry();
-        addObject(persianInfantry,308,88);
-        PersianInfantry persianInfantry2 = new PersianInfantry();
-        addObject(persianInfantry2,462,95);
-        PersianInfantry persianInfantry3 = new PersianInfantry();
-        addObject(persianInfantry3,644,93);
-        PersianInfantry persianInfantry4 = new PersianInfantry();
-        addObject(persianInfantry4,792,90);
         Alexander alexander = new Alexander();
-        addObject(alexander,857,558);
+        addObject(alexander,885,561);
         Companions companions = new Companions();
-        addObject(companions,757,561);
+        addObject(companions,790,562);
         Sarissophoroi sarissophoroi = new Sarissophoroi();
-        addObject(sarissophoroi,560,545);
+        addObject(sarissophoroi,152,564);
         Sarissophoroi sarissophoroi2 = new Sarissophoroi();
-        addObject(sarissophoroi2,445,547);
+        addObject(sarissophoroi2,242,559);
+        sarissophoroi2.setLocation(261,557);
         Sarissophoroi sarissophoroi3 = new Sarissophoroi();
-        addObject(sarissophoroi3,326,548);
+        addObject(sarissophoroi3,336,555);
         Sarissophoroi sarissophoroi4 = new Sarissophoroi();
-        addObject(sarissophoroi4,216,549);
+        addObject(sarissophoroi4,450,564);
+        sarissophoroi3.setLocation(376,556);
+        sarissophoroi4.setLocation(486,552);
         Hypaspists hypaspists = new Hypaspists();
-        addObject(hypaspists,110,573);
-        Hypaspists hypaspists2 = new Hypaspists();
-        addObject(hypaspists2,639,623);
-        PersianCavalry persianCavalry7 = new PersianCavalry();
-        addObject(persianCavalry7,111,201);
+        addObject(hypaspists,629,556);
+        PersianCavalry persianCavalry = new PersianCavalry();
+        addObject(persianCavalry,931,186);
+        PersianCavalry persianCavalry2 = new PersianCavalry();
+        addObject(persianCavalry2,803,154);
+        PersianCavalry persianCavalry3 = new PersianCavalry();
+        addObject(persianCavalry3,635,151);
+        PersianCavalry persianCavalry4 = new PersianCavalry();
+        addObject(persianCavalry4,472,150);
+        PersianCavalry persianCavalry5 = new PersianCavalry();
+        addObject(persianCavalry5,308,162);
+        PersianCavalry persianCavalry6 = new PersianCavalry();
+        addObject(persianCavalry6,155,174);
+        PersianInfantry persianInfantry = new PersianInfantry();
+        addObject(persianInfantry,734,49);
+        PersianInfantry persianInfantry2 = new PersianInfantry();
+        addObject(persianInfantry2,555,64);
+        PersianInfantry persianInfantry3 = new PersianInfantry();
+        addObject(persianInfantry3,393,58);
+        PersianInfantry persianInfantry4 = new PersianInfantry();
+        addObject(persianInfantry4,236,63);
+        Companions companions2 = new Companions();
+        addObject(companions2,699,633);
+        hypaspists.setLocation(583,609);
+        companions2.setLocation(676,560);
     }
     
     public void act(){
