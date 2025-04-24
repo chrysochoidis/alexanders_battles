@@ -1,21 +1,10 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
-/**
- * Write a description of class Menu_Screen here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class MenuScreen extends World
 {
-
-    /**
-     * Constructor for objects of class Menu_Screen.
-     * 
-     */
+    
     public MenuScreen()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 500, 1); 
         prepare();
     }
@@ -26,10 +15,10 @@ public class MenuScreen extends World
      */
     private void prepare()
     {
-
         showText("Welcome to Alexander's Battles!\n Defeat the Persians and write history!",getWidth()/2, 80);
         addObject(new StartButton(), getWidth()/2, (getHeight()/2 - 80));
         addObject(new HowToPlayButton(), getWidth()/2, getHeight()/2);
-        addObject(new CreditsButton(), getWidth()/2, (getHeight()/2 + 80));
+        addObject(new CreditsButton(), getWidth()/2, (getHeight()/2 + 80));    
+        GameStats.level = 0;
     }
 }

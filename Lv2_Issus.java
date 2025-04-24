@@ -1,28 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Granicus here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Lv2_Issus extends World
 {
-
-    /**
-     * Constructor for objects of class Granicus.
-     * 
-     */
+    private BattleUnit selectedUnit;
+    private String battleStatus = "playing";
+    private boolean soundPlayed = false;
+    
     public Lv2_Issus()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1); 
         prepare();
     }
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
+
     private void prepare()
     {
         PersianCavalry persianCavalry = new PersianCavalry();
@@ -83,5 +72,90 @@ public class Lv2_Issus extends World
         addObject(hypaspists3,469,670);
         Companions companions3 = new Companions();
         addObject(companions3,851,574);
+        GameStats.reset();
+        GameStats.level = 2;
     }
+    
+     public void act(){
+         
+         if(battleStatus.equals("playing")){
+            checkUnitMovement();
+        }
+        else if(battleStatus.equals("victory")){
+            showText("Victory!! Click to continue", getWidth()/2, getHeight()/2);
+            if(soundPlayed == false){
+                Greenfoot.playSound("victory.mp3");
+                soundPlayed = true;
+            }
+            
+            if(Greenfoot.mouseClicked(null)){
+                Greenfoot.setWorld(new StoryScreen());
+            }
+        }
+        else if(battleStatus.equals("defeat")){
+            showText("Defeat...Click to return to Main Menu", getWidth()/2, getHeight()/2);
+            if(soundPlayed == false){
+                Greenfoot.playSound("defeat.mp3");;
+                soundPlayed = true;
+            }
+
+            if(Greenfoot.mouseClicked(null)){
+                Greenfoot.setWorld(new MenuScreen());
+            }
+        }
+        checkBattleStatus();
+    }
+    
+    public void checkUnitMovement(){
+        if(selectedUnit != null){
+            if(Greenfoot.isKeyDown("left")){
+                selectedUnit.setRotation(selectedUnit.getRotation() -5);
+                if(selectedUnit.getMovingState() == 1){
+                    selectedUnit.newMovement(new Vector(selectedUnit.getRotation()-90,0.3));
+                }
+                else if(selectedUnit.getMovingState() == 2){
+                    selectedUnit.newMovement(new Vector(selectedUnit.getRotation()+90,0.1));
+                }
+            }
+            
+            if(Greenfoot.isKeyDown("right")){
+                selectedUnit.setRotation(selectedUnit.getRotation() + 5);
+                if(selectedUnit.getMovingState() == 1){
+                    selectedUnit.newMovement(new Vector(selectedUnit.getRotation()-90,0.3));
+                }
+                else if(selectedUnit.getMovingState() == 2){
+                    selectedUnit.newMovement(new Vector(selectedUnit.getRotation()+90,0.1));
+                }
+            }
+
+              if(Greenfoot.isKeyDown("up")){
+                selectedUnit.newMovement(new Vector(selectedUnit.getRotation()-90,0.3 ));
+                selectedUnit.setMovingState(1);
+            }
+            
+            if(Greenfoot.isKeyDown("down")){
+                selectedUnit.newMovement(new Vector(selectedUnit.getRotation()+90,0.1));
+                selectedUnit.setMovingState(2);
+            }
+            if(Greenfoot.isKeyDown("backspace")){
+                selectedUnit.stop();
+                selectedUnit.setMovingState(0);
+            }
+        }
+    }
+    
+    public void checkBattleStatus(){
+        if(GameStats.persiansKilled >= 12){
+            battleStatus = "victory";
+        }
+        if(GameStats.macedoniansKilled >= 8){
+            battleStatus = "defeat";
+        }
+    }
+    
+    public void setSelectedUnit(BattleUnit unit){
+        selectedUnit = unit;
+    }
+
+
 }

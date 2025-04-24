@@ -1,32 +1,24 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
-/**
- * Write a description of class PersianCavalry here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class PersianCavalry extends BattleUnit
 {
-    private GreenfootImage image = new GreenfootImage("persianCav0_S.png");
-    private GreenfootImage image1 = new GreenfootImage("persianCav0_M.png");
     public PersianCavalry(){
-        super(2,4,7,75,"Persia");
+        super(4,7,75,"Persia");
+        loadImages(new GreenfootImage("persianCav0_S.png"), new GreenfootImage("persianCav0_M.png"),
+        new GreenfootImage("persianCav1_S.png"), new GreenfootImage("persianCav1_M.png"),
+        new GreenfootImage("persianCav2_S.png"), new GreenfootImage("persianCav2_M.png"));
     }
-    /**
-     * Act - do whatever the PersianCavalry wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+
     public void act()
     {
          if(this.getFights()){
             handleFight();
         }
         else{
-        move();
-        checkCollision();
-        checkHealthState();
-        //checkMovingState();
+            move();
+            checkCollision();
+            checkHealthState();
+            updateImage(75);
         }     
     }
 }

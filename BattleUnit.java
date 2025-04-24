@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
 /**
  * Write a description of class BattleUnit here.
@@ -18,14 +18,23 @@ public  class BattleUnit extends SmoothMover
     //0: units is still, 1: unit moves forwards, 2: unit moves backwards
     private int movingState;
     
-    
     private boolean fights;
     private int fightTimer = 0;
     private int originalRotation;
     private BattleUnit collidedWith = null;
     
-    public BattleUnit(int speed, int armor, int damage, int health, String faction){
-        this.speed = speed;
+    //images
+    private GreenfootImage imgStillHealthy;
+    private GreenfootImage imgMovingHealthy;
+    private GreenfootImage imgStillMid;
+    private GreenfootImage imgMovingMid;
+    private GreenfootImage imgStillCritical;
+    private GreenfootImage imgMovingCritical;
+    /**
+     * super constuctor that is called by various battle units
+     * depending their own stats
+     */
+    public BattleUnit(int armor, int damage, int health, String faction){
         this.armor = armor;
         this.damage = damage;
         this.health = health;
@@ -34,6 +43,9 @@ public  class BattleUnit extends SmoothMover
         this.faction = faction;
     }
     
+    /**
+     * check for colliding units regardless of faction
+     */
     public void checkCollision() {
         BattleUnit other = (BattleUnit)getOneIntersectingObject(BattleUnit.class);
         if (other != null) {
@@ -41,6 +53,10 @@ public  class BattleUnit extends SmoothMover
         }
     }
     
+    /**
+     * if the units are the same faction they stop.
+     * if not the fight sequence begins
+     */
     public void collide(BattleUnit other){
         if(this.faction.equals(other.getFaction())){
             this.stop();
@@ -54,7 +70,10 @@ public  class BattleUnit extends SmoothMover
             other.isFighting(this);
         }
     }
-    
+    /**
+     * sets the fighting units's states to fight mode. gets their current 
+     * rotation so the fighting sequence be more realistic
+     */
     public void isFighting(BattleUnit other){
         fights = true;
         fightTimer = 30;
@@ -65,7 +84,15 @@ public  class BattleUnit extends SmoothMover
         
     }
     
+    /**
+     * fighting sequence. in regard to the custom timer the units rotate left 
+     * and right to imitate the fighting.
+     * one cycle of figting sequence reduces the health of both units
+     * if unit health reaches zero it dies and increaces the global 
+     * faction death toll counter.
+     */
     public void handleFight(){
+        World world = getWorld();
         if(fightTimer ==30){
             setRotation(originalRotation - 5);
         }
@@ -82,36 +109,82 @@ public  class BattleUnit extends SmoothMover
             fightTimer = 30;
             int newHealth = this.getHealth() - Math.max(0, collidedWith.getDamage() - this.getArmor());
             setHealth(newHealth);
-        if(getHealth() <=0){
-            getWorld().removeObject(this);
-            return;
-        }
-        else{
-            fights = false;
-            collidedWith = null;
-            setRotation(originalRotation);
-        }
+                  
+            if(getHealth() <=0){
+                if(this.getFaction().equals("Persia")){
+                    GameStats.incrPersiansKilled();
+                }
+                if(this.getFaction().equals("Macedonia")){
+                    GameStats.incrMacedoniansKilled();
+                }
+                getWorld().removeObject(this);
+                return;
+                }
+            else{
+                    fights = false;
+                    collidedWith = null;
+                    setRotation(originalRotation);
+            }
         }
     }
     
+    /**
+     * sets the proper image depending the moving and 
+     * the health state of the unit
+     */
+    public void updateImage(int maxHealth){
+        GreenfootImage selectedImage;
+        if(this.getHealth() > maxHealth * 2/3)
+            selectedImage = (movingState == 0) ? imgStillHealthy : imgMovingHealthy;
+        else if (this.getHealth() > maxHealth / 3)
+            selectedImage = (movingState == 0) ? imgStillMid : imgMovingMid;
+        else 
+            selectedImage = (movingState == 0) ? imgStillCritical : imgMovingCritical;
+        
+        setImage(selectedImage);
+    }
     public void checkHealthState(){
         
-        if (this.getHealth() < 0){
-            World world = getWorld();
+        if (this.getHealth() <= 0){
             
-            world.removeObject(this);
+            //World world = getWorld();
+            //world.removeObject(this);
+           
         }
         
     }
     
+    /**
+     * check if the battle unit is selected in each level 
+     */
     public void checkIfSelected(){
         if(Greenfoot.mouseClicked(this)){
-            Lv1_Granicus world = (Lv1_Granicus) getWorld();
-            world.setSelectedUnit(this);
+            
+            switch(GameStats.level){
+                case 1 : Lv1_Granicus granicus = (Lv1_Granicus) getWorld();
+                granicus.setSelectedUnit(this);
+                break;
+                case 2 : Lv2_Issus issus = (Lv2_Issus) getWorld();
+                issus.setSelectedUnit(this);
+                break;
+                case 3 : Lv3_Gaugamela gaugamela = (Lv3_Gaugamela) getWorld();
+                gaugamela.setSelectedUnit(this);
+                break;
+            }
         }
-        
     }
     
+    public void loadImages(GreenfootImage stillHealthy, GreenfootImage movingHealthy,
+    GreenfootImage stillMid, GreenfootImage movingMid,GreenfootImage stillCritical,
+    GreenfootImage movingCritical){
+        imgStillHealthy = stillHealthy;
+        imgMovingHealthy = movingHealthy;
+        imgStillMid = stillMid;
+        imgMovingMid = movingMid;
+        imgStillCritical = stillCritical;
+        imgMovingCritical = movingCritical;
+
+    }
     public int getDamage(){
         return this.damage;
     }
@@ -154,6 +227,4 @@ public  class BattleUnit extends SmoothMover
     public String getFaction(){
         return faction;
     }
-    
-  
 }

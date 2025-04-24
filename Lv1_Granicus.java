@@ -1,22 +1,16 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
-/**
- * Write a description of class Granicus here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Lv1_Granicus extends World
 {
     private BattleUnit selectedUnit;
-    /**
-     * Constructor for objects of class Granicus.
-     * 
-     */
+    private String battleStatus = "playing";
+    private boolean soundPlayed = false;
+    
+
     public Lv1_Granicus()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1); 
+
         prepare();
     }
     
@@ -70,6 +64,36 @@ public class Lv1_Granicus extends World
     }
     
     public void act(){
+        if(battleStatus.equals("playing")){
+            checkUnitMovement();
+        }
+        else if(battleStatus.equals("victory")){
+            showText("Victory!! Click to continue", getWidth()/2, getHeight()/2);
+            if(soundPlayed == false){
+                Greenfoot.playSound("victory.mp3");
+                soundPlayed = true;
+            }
+            
+            if(Greenfoot.mouseClicked(null)){
+                Greenfoot.setWorld(new StoryScreen());
+            }
+        }
+        else if(battleStatus.equals("defeat")){
+            showText("Defeat...Click to return to Main Menu", getWidth()/2, getHeight()/2);
+            if(soundPlayed == false){
+                Greenfoot.playSound("defeat.mp3");;
+                soundPlayed = true;
+            }
+
+            if(Greenfoot.mouseClicked(null)){
+                Greenfoot.setWorld(new MenuScreen());
+            }
+        }
+        checkBattleStatus();
+    
+    }
+    
+    public void checkUnitMovement(){
         if(selectedUnit != null){
             if(Greenfoot.isKeyDown("left")){
                 selectedUnit.setRotation(selectedUnit.getRotation() -5);
@@ -104,9 +128,14 @@ public class Lv1_Granicus extends World
                 selectedUnit.stop();
                 selectedUnit.setMovingState(0);
             }
-            
-        
-    
+        }
+    }
+    public void checkBattleStatus(){
+        if(GameStats.persiansKilled >= 10){
+            battleStatus = "victory";            
+        }
+        if(GameStats.macedoniansKilled >= 8){
+            battleStatus = "defeat";
         }
     }
     

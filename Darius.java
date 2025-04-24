@@ -1,32 +1,24 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*; 
 
-/**
- * Write a description of class Darius here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Darius extends BattleUnit
 {
-    private GreenfootImage image = new GreenfootImage("darius0_S.png");
-    private GreenfootImage image1 = new GreenfootImage("darius0_M.png");
     public Darius(){
-        super(2,2,9,110,"Persia");
+        super(2,9,110,"Persia");
+        loadImages(new GreenfootImage("darius0_S.png"), new GreenfootImage("darius0_M.png"),
+        new GreenfootImage("darius1_S.png"), new GreenfootImage("darius1_M.png"),
+        new GreenfootImage("darius2_S.png"), new GreenfootImage("darius2_M.png"));
     }
-    /**
-     * Act - do whatever the Darius wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    
     public void act()
     {
         if(this.getFights()){
             handleFight();
         }
         else{
-        move();
-        checkCollision();
-        checkHealthState();
-        //checkMovingState();
+            move();
+            checkCollision();
+            checkHealthState();
+            updateImage(110);
         }  
     }
 }

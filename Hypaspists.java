@@ -1,23 +1,14 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
-/**
- * Write a description of class Hypaspists here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Hypaspists extends BattleUnit
 {
-    private GreenfootImage image = new GreenfootImage("hypaspists0_S.png");
-    private GreenfootImage image1 = new GreenfootImage("hypaspists0_M.png");
-    
     public Hypaspists(){
-        super(1,6,6,65,"Macedonia");
+        super(6,6,65,"Macedonia");
+        loadImages(new GreenfootImage("hypaspists0_S.png"), new GreenfootImage("hypaspists0_M.png"),
+        new GreenfootImage("hypaspists1_S.png"), new GreenfootImage("hypaspists1_M.png"),
+        new GreenfootImage("hypaspists2_S.png"), new GreenfootImage("hypaspists2_M.png"));
     }
-    /**
-     * Act - do whatever the Hypaspists wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+
     public void act()
     {
         if(this.getFights()){
@@ -25,20 +16,12 @@ public class Hypaspists extends BattleUnit
             checkIfSelected();
         }
         else{
-        move();
-        checkIfSelected();
-        checkCollision();
-        checkHealthState();
-        checkMovingState();
-        }
-    }
-    
-    public void checkMovingState(){
-        if(this.getMovingState() == 0){
-            setImage(image);
-        }
-        else if (this.getMovingState() == 1 || this.getMovingState() == 2){
-            setImage(image1);
+            move();
+            checkIfSelected();
+            checkCollision();
+            checkHealthState();
+            updateImage(65);
+       
         }
     }
 }

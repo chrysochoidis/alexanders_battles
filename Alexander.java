@@ -1,25 +1,14 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
-/**
- * Write a description of class Alexander here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Alexander extends BattleUnit
 {
-
-
-    private GreenfootImage image = new GreenfootImage("alexander0_S.png");
-    private GreenfootImage image1 = new GreenfootImage("alexander0_M.png");
-
     public Alexander(){
-        super(2,5,10,120,"Macedonia"); 
+        super(5,10,120,"Macedonia");
+        loadImages(new GreenfootImage("alexander0_S.png"), new GreenfootImage("alexander0_M.png"),
+        new GreenfootImage("alexander1_S.png"), new GreenfootImage("alexander1_M.png"),
+        new GreenfootImage("alexander2_S.png"), new GreenfootImage("alexander2_M.png"));
     }
-    /**
-     * Act - do whatever the Alexander wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+ 
     public void act()
     {
         if(this.getFights()){
@@ -27,22 +16,11 @@ public class Alexander extends BattleUnit
             checkIfSelected();
         }
         else{
-        move();
-        checkIfSelected();
-        checkCollision();
-        checkHealthState();
-        checkMovingState();
-
-    }
-        
-    }
-
-    public void checkMovingState(){
-        if(this.getMovingState() == 0){
-            setImage(image);
-        }
-        else if (this.getMovingState() == 1 || this.getMovingState() == 2){
-            setImage(image1);
+            move();
+            checkIfSelected();
+            checkCollision();
+            checkHealthState();
+            updateImage(120);
         }
     }
 }
