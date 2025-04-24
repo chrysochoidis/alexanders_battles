@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class StoryScreen extends World
+public class StoryScreen extends Screen
 {
 
     /**
@@ -15,12 +15,6 @@ public class StoryScreen extends World
      */
     public StoryScreen()
     {    
-        super(600, 500, 1); 
-        prepare();
-    }
-    
-    private void prepare(){
-        
         switch(GameStats.level){
             case 0: showText("Ο Αλέξανδρος ξεκίνησε την εκστρατεία του το καλοκάιρι του\n" + 
          "323 πΧ. Η πρώτη του δοκιμασία ενάντια στους Πέρσες ήταν να έρθει σύντομα\n" +
@@ -49,9 +43,10 @@ public class StoryScreen extends World
         "Ανατολή.\n",getWidth()/2, getHeight()/2);
         GameStats.level = 3;
         break;
+            case 3: showText("Με την νίκη επί των Περσών ο Αλεξ μπορούσε ελέυθερα να κατευθυνθεί προς την Βαβυλώνα",getWidth()/2, getHeight()/2);
+        break;
         }
          
         addObject(new StartButton(), getWidth()/2, (getHeight()/2 + 200));
-        
     }
 }

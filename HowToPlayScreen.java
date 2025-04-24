@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class HowToPlayScreen extends World
+public class HowToPlayScreen extends Screen
 {
 
     /**
@@ -15,12 +15,6 @@ public class HowToPlayScreen extends World
      */
     public HowToPlayScreen()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 500, 1);
-        prepare();
-    }
-    
-    private void prepare(){
         showText("Your goal is to defeat the Persian army in every battle.\n" +
         "Select each unit individually by clicking on it.\n" +
         "Up Arrow - unit moves forward\n" +
