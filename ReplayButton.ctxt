@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=ReplayButton
-comment0.text=\r\n\ C\r\n
+comment0.text=\r\n\ Creates\ the\ Replay\ Button,\ to\ replay\ a\ certain\ level.\r\n
 comment1.params=
 comment1.target=ReplayButton()
 comment2.params=

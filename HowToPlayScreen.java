@@ -15,6 +15,6 @@ public class HowToPlayScreen extends Screen
         "Δεξί βέλος - η μονάδα περιστρέφεται προς τα ΔΕΞΙΑ\n"+
         "Backspace - η μονάδα ακινητοποιείται\n" +
         "ΠΡΟΣΟΧΗ! Αν πεθάνει ο Αλέξανδρος τότε αυτόματα χάνεται η μάχη" ,getWidth()/2, getHeight()/2);
-        addObject(new BackButton(), getWidth()/2, (getHeight()/2 + 200));
+        addObject(new BackButton(), (getWidth()/2 + 50), (getHeight()/2 + 200));
     }
 }

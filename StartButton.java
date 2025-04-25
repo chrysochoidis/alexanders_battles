@@ -6,16 +6,17 @@ import greenfoot.*;
 public class StartButton extends Button
 {
     public StartButton(){
-        GreenfootImage img = new GreenfootImage(200, 50);
+        GreenfootImage img = new GreenfootImage(300, 50);
         img.setColor(new Color(255,215,0));
         img.setFont(new Font("Arial", true, false, 24));
-        img.drawString("START GAME", 30, 35);
+        img.drawString("ΠΑΙΞΕ", 30, 35);
         setImage(img);
     }
     
     public void act()
     {
         if(Greenfoot.mouseClicked(this)){
+            Greenfoot.playSound("sword_clash.mp3");
             switch(GameStats.level){
                 case 0 : Greenfoot.setWorld(new StoryScreen());
                 break;

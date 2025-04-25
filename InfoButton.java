@@ -1,23 +1,23 @@
-import greenfoot.*;
+import greenfoot.*;  
 
 /**
- * Creates the Return to Main Menu Button to return to the menu after a battle loss
+ * Creates the Info Button to display the InfoScreen
  */
-public class ReturnToMenuButton extends Button
+public class InfoButton extends Button
 {
-    public ReturnToMenuButton(){
+    public InfoButton(){
         GreenfootImage img = new GreenfootImage(300, 50);
         img.setColor(new Color(255,215,0));
         img.setFont(new Font("Arial", true, false, 24));
-        img.drawString("ΑΡΧΙΚΟ ΜΕΝΟΥ", 30, 35);
+        img.drawString("ΠΛΗΡΟΦΟΡΙΕΣ", 60, 35);
         setImage(img);
     }
-    
+
     public void act()
     {
         if(Greenfoot.mouseClicked(this)){
             Greenfoot.playSound("sword_sound.mp3");
-            Greenfoot.setWorld(new MenuScreen());
+            Greenfoot.setWorld(new InfoScreen());
         }
     }
 }

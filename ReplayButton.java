@@ -6,10 +6,10 @@ import greenfoot.*;
 public class ReplayButton extends Button
 {
     public ReplayButton(){
-        GreenfootImage img = new GreenfootImage(200, 50);
+        GreenfootImage img = new GreenfootImage(300, 50);
         img.setColor(new Color(255,215,0));
         img.setFont(new Font("Arial", true, false, 24));
-        img.drawString("REPLAY", 30, 35);
+        img.drawString("ΞΑΝΑΠΑΙΞΕ", 30, 35);
         setImage(img);
     }
     
@@ -25,6 +25,7 @@ public class ReplayButton extends Button
                 case 3 :battleMap = new Lv3_Gaugamela();
                 break;
             }
+            Greenfoot.playSound("sword_clash.mp3");
             GameStats.resetKills();
             Greenfoot.setWorld(battleMap);
         }

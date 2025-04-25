@@ -6,16 +6,17 @@ import greenfoot.*;
 public class HowToPlayButton extends Button
 {
     public HowToPlayButton(){
-        GreenfootImage img = new GreenfootImage(200, 50);
+        GreenfootImage img = new GreenfootImage(300, 50);
         img.setColor(new Color(255,215,0));
         img.setFont(new Font("Arial", true, false, 24));
-        img.drawString("HOW TO PLAY", 30, 35);
+        img.drawString("ΟΔΗΓΙΕΣ ΠΑΙΧΝΙΔΙΟΥ", 30, 35);
         setImage(img);
     }
 
     public void act()
     {
         if(Greenfoot.mouseClicked(this)){
+            Greenfoot.playSound("sword_sound.mp3");
             Greenfoot.setWorld(new HowToPlayScreen());
         }
     }

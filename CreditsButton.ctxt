@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.target=CreditsButton
-comment0.text=\r\n\ Creates\ the\ Credits\ Button\ to\ display\ the\ CreditsScreen\r\n
-comment1.params=
-comment1.target=CreditsButton()
-comment2.params=
-comment2.target=void\ act()
-numComments=3

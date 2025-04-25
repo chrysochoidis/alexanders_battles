@@ -17,7 +17,7 @@ public class StoryScreen extends Screen
             "Έλληνες μισθοφόρους. Ο Αλέξανδρος δίχως να χάσει χρόνο ετοιμάζει τον στρατό\n" +
             "του για μάχη.\n",getWidth()/2, getHeight()/2);
             GameStats.level = 1;
-            addObject(new StartButton(), getWidth()/2, (getHeight()/2 + 200));
+            addObject(new StartButton(), (getWidth()/2 + 50), (getHeight()/2 + 200));
             break;
             case 1: showText("Ο Αλέξανδρος νίκησε με ευκολία τις δυνάμεις των Παερσών\n" + 
             "κια συνέχισε με την απελευθέρωση των Ελληνικών πόλεων της Μ. Ασίας.\n" +
@@ -27,7 +27,7 @@ public class StoryScreen extends Screen
             "Μ. Ασίας. Ο Αλέξανδρος πρέπει να νικήσει τον Δαρείο προκειμένου να συνεχίσει προς την Μέση\n" +
             "Ανατολή.\n",getWidth()/2, getHeight()/2);
             GameStats.level = 2;
-            addObject(new StartButton(), getWidth()/2, (getHeight()/2 + 200));
+            addObject(new StartButton(), (getWidth()/2 + 50), (getHeight()/2 + 200));
             break;
             case 2: showText("Ο Αλέξανδρος κάνοντας έξυπνο ελιγμό με το ιππικό\n" + 
             "έτρεψε τον Δαρείο και τον στρατό του σε φυγή Τύρος, Γάζα, Αίγυπτος.\n" +
@@ -37,10 +37,10 @@ public class StoryScreen extends Screen
             "Μ. Ασίας. Ο Αλέξανδρος πρέπει να νικήσει τον Δαρείο προκειμένου να συνεχίσει προς την Μέση\n" +
             "Ανατολή.\n",getWidth()/2, getHeight()/2);
             GameStats.level = 3;
-            addObject(new StartButton(), getWidth()/2, (getHeight()/2 + 200));
+            addObject(new StartButton(), (getWidth()/2 + 50), (getHeight()/2 + 200));
             break;
             case 3: showText("Με την νίκη επί των Περσών ο Αλεξ μπορούσε ελέυθερα να κατευθυνθεί προς την Βαβυλώνα",getWidth()/2, getHeight()/2);
-            addObject(new ReturnToMenuButton(), getWidth()/2, (getHeight()/2 + 200));
+            addObject(new ReturnToMenuButton(), (getWidth()/2 + 50), (getHeight()/2 + 200));
             break;
         }
     }

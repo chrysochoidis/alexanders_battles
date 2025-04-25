@@ -6,16 +6,17 @@ import greenfoot.*;
 public class BackButton extends Button
 {
    public BackButton(){
-        GreenfootImage img = new GreenfootImage(200, 50);
+        GreenfootImage img = new GreenfootImage(300, 50);
         img.setColor(Color.BLACK);
         img.setFont(new Font("Arial", true, false, 24));
-        img.drawString("BACK", 60, 35);
+        img.drawString("ΠΙΣΩ", 60, 35);
         setImage(img);
    }
    
    public void act(){
        if(Greenfoot.mouseClicked(this)){
-                Greenfoot.setWorld(new MenuScreen());
-            }
+            Greenfoot.playSound("sword_sound.mp3");
+            Greenfoot.setWorld(new MenuScreen());
+        }
    }
 }

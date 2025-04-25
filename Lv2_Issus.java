@@ -102,7 +102,7 @@ public class Lv2_Issus extends Level
             battleStatus = "defeat";
         }
         
-        if(GameStats.persiansKilled >= 1){
+        if(GameStats.persiansKilled >= 16){
             battleStatus = "victory";
         }
         

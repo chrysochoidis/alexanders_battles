@@ -6,7 +6,6 @@ public class Screen extends World
 {
     public Screen()
     {    
-
         super(600, 500, 1); 
     }
 }
