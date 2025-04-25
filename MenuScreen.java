@@ -1,8 +1,10 @@
 import greenfoot.*;
-
+/**
+ * Screen that displayes the Main Menu with some choices.
+ * It sets the game level to 0
+ */
 public class MenuScreen extends Screen
 {
-    
     public MenuScreen()
     {    
         showText("Welcome to Alexander's Battles!\n Defeat the Persians and write history!",getWidth()/2, 80);

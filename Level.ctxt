@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Level
+comment0.text=\r\n\ Superclass\ of\ all\ the\ Battle\ maps.\ Handles\ the\ unit\ movements\r\n
+comment1.params=
+comment1.target=Level()
+comment2.params=
+comment2.target=void\ checkUnitMovement()
+comment2.text=\r\n\ Depending\ the\ arrow\ key\ that\ the\ user\ presses,\ sets\ the\ movement\ of\ the\ \r\n\ \r\n
+comment3.params=unit
+comment3.target=void\ setSelectedUnit(BattleUnit)
+numComments=4

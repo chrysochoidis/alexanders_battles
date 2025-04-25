@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=MenuScreen
+comment0.text=\r\n\ Screen\ that\ displayes\ the\ Main\ Menu\ with\ some\ choices.\r\n\ It\ sets\ the\ game\ level\ to\ 0\r\n
 comment1.params=
 comment1.target=MenuScreen()
 numComments=2

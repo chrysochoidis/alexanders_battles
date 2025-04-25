@@ -1,10 +1,13 @@
 import greenfoot.*;
 
 /**
- * Write a description of class BattleUnit here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Represents a Battle Unit. Each unit has some specs like armor, damage and health
+ * each unit has images that changes in regard to the damage takes and 
+ * whether the unit moves or not.
+ * when units collide the go in fight mode and there is a sequence in which 
+ * they move a certain way and their health deteriorates.
+ * It is checked whether a unit is selected so the users commands apply to the
+ * certain unit.
  */
 public  class BattleUnit extends SmoothMover
 {
@@ -142,16 +145,6 @@ public  class BattleUnit extends SmoothMover
             selectedImage = (movingState == 0) ? imgStillCritical : imgMovingCritical;
         
         setImage(selectedImage);
-    }
-    public void checkHealthState(){
-        
-        if (this.getHealth() <= 0){
-            
-            //World world = getWorld();
-            //world.removeObject(this);
-           
-        }
-        
     }
     
     /**

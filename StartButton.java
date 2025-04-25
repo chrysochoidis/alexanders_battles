@@ -1,14 +1,10 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
 /**
- * Write a description of class StartButton here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Creates the Start button to initiate the game or the battle.
  */
 public class StartButton extends Button
 {
-    
     public StartButton(){
         GreenfootImage img = new GreenfootImage(200, 50);
         img.setColor(new Color(255,215,0));
@@ -30,7 +26,6 @@ public class StartButton extends Button
                 case 3 : Greenfoot.setWorld(new Lv3_Gaugamela());
                 break;
             }
-            
         }
     }
 }

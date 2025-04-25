@@ -1,20 +1,23 @@
 import greenfoot.*;
-
-public class Lv3_Gaugamela extends World
+/**
+ * The battle map of the third level, representing the battle of Gaugamela.
+ * Creates the map, and sets the victory and defeat conditions
+ */
+public class Lv3_Gaugamela extends Level
 {
-    private BattleUnit selectedUnit;
     private String battleStatus = "playing";
     private boolean soundPlayed = false;
+    Alexander alexander = new Alexander();
+    Darius darius = new Darius();
     
     public Lv3_Gaugamela()
     {    
-        super(1000, 700, 1); 
         prepare();
     }
     
     private void prepare()
     {
-        GameStats.reset();
+        GameStats.resetKills();
         GameStats.level = 3;
     }
     
@@ -30,7 +33,7 @@ public class Lv3_Gaugamela extends World
             }
             
             if(Greenfoot.mouseClicked(null)){
-                Greenfoot.setWorld(new MenuScreen());
+                Greenfoot.setWorld(new StoryScreen());
             }
         }
         else if(battleStatus.equals("defeat")){
@@ -40,62 +43,28 @@ public class Lv3_Gaugamela extends World
                 soundPlayed = true;
             }
 
-            if(Greenfoot.mouseClicked(null)){
-                Greenfoot.setWorld(new MenuScreen());
-            }
+            addObject(new ReplayButton(), getWidth()/2, (getHeight()/2 + 20));
+            addObject(new ReturnToMenuButton(), getWidth()/2, (getHeight()/2 + 100));
         }
         checkBattleStatus();
     }
     
-    public void checkUnitMovement(){
-        if(selectedUnit != null){
-            if(Greenfoot.isKeyDown("left")){
-                selectedUnit.setRotation(selectedUnit.getRotation() -5);
-                if(selectedUnit.getMovingState() == 1){
-                    selectedUnit.newMovement(new Vector(selectedUnit.getRotation()-90,0.3));
-                }
-                else if(selectedUnit.getMovingState() == 2){
-                    selectedUnit.newMovement(new Vector(selectedUnit.getRotation()+90,0.1));
-                }
-            }
-            
-            if(Greenfoot.isKeyDown("right")){
-                selectedUnit.setRotation(selectedUnit.getRotation() + 5);
-                if(selectedUnit.getMovingState() == 1){
-                    selectedUnit.newMovement(new Vector(selectedUnit.getRotation()-90,0.3));
-                }
-                else if(selectedUnit.getMovingState() == 2){
-                    selectedUnit.newMovement(new Vector(selectedUnit.getRotation()+90,0.1));
-                }
-            }
-
-              if(Greenfoot.isKeyDown("up")){
-                selectedUnit.newMovement(new Vector(selectedUnit.getRotation()-90,0.3 ));
-                selectedUnit.setMovingState(1);
-            }
-            
-            if(Greenfoot.isKeyDown("down")){
-                selectedUnit.newMovement(new Vector(selectedUnit.getRotation()+90,0.1));
-                selectedUnit.setMovingState(2);
-            }
-            if(Greenfoot.isKeyDown("backspace")){
-                selectedUnit.stop();
-                selectedUnit.setMovingState(0);
-            }
-        }
-    }
-    
     public void checkBattleStatus(){
-        if(GameStats.persiansKilled >= 12){
+        
+        if(alexander.getHealth() <= 0){
+            battleStatus = "defeat";
+        }
+        
+        if(darius.getHealth() <= 0){
             battleStatus = "victory";
         }
-        if(GameStats.macedoniansKilled >= 8){
+        
+        if(GameStats.persiansKilled >= 1){
+            battleStatus = "victory";
+        }
+        
+        if(GameStats.macedoniansKilled >= 10){
             battleStatus = "defeat";
         }
     }
-    
-    public void setSelectedUnit(BattleUnit unit){
-        selectedUnit = unit;
-    }
-
 }

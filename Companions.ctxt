@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Companions
+comment0.text=\r\n\ Class\ representing\ the\ Companion\ Cavalry.\ Creates\ a\ battle\ unit\ with\ \r\n\ certain\ specs\ and\ loads\ its\ images\r\n
 comment1.params=
 comment1.target=Companions()
 comment2.params=

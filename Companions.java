@@ -1,5 +1,8 @@
 import greenfoot.*;
-
+/**
+ * Class representing the Companion Cavalry. Creates a battle unit with 
+ * certain specs and loads its images
+ */
 public class Companions extends BattleUnit
 {
       public Companions(){
@@ -19,7 +22,6 @@ public class Companions extends BattleUnit
         move();
         checkIfSelected();
         checkCollision();
-        checkHealthState();
         updateImage(80);
         }
     }

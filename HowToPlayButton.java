@@ -1,14 +1,10 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*; 
 
 /**
- * Write a description of class HowToPlayButton here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Creates the How to Play Button to display the How To Play Screen
  */
 public class HowToPlayButton extends Button
 {
-    
     public HowToPlayButton(){
         GreenfootImage img = new GreenfootImage(200, 50);
         img.setColor(new Color(255,215,0));
@@ -16,7 +12,6 @@ public class HowToPlayButton extends Button
         img.drawString("HOW TO PLAY", 30, 35);
         setImage(img);
     }
-
 
     public void act()
     {

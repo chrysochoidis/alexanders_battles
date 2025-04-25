@@ -1,16 +1,10 @@
 #BlueJ class context
 comment0.target=Lv1_Granicus
+comment0.text=\r\n\ The\ battle\ map\ of\ the\ first\ level,\ representing\ the\ Battle\ of\ river\ Granicus.\r\n\ Creates\ the\ map,\ and\ sets\ the\ victory\ and\ defeat\ conditions.\r\n
 comment1.params=
 comment1.target=Lv1_Granicus()
 comment2.params=
-comment2.target=void\ prepare()
-comment2.text=\r\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\r\n\ That\ is\:\ create\ the\ initial\ objects\ and\ add\ them\ to\ the\ world.\r\n
+comment2.target=void\ act()
 comment3.params=
-comment3.target=void\ act()
-comment4.params=
-comment4.target=void\ checkUnitMovement()
-comment5.params=
-comment5.target=void\ checkBattleStatus()
-comment6.params=unit
-comment6.target=void\ setSelectedUnit(BattleUnit)
-numComments=7
+comment3.target=void\ checkBattleStatus()
+numComments=4

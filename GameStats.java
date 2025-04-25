@@ -1,17 +1,13 @@
 /**
- * Write a description of class GameStats here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Class that has public variables important to the game
  */
 public class GameStats  
 {
  public static int persiansKilled = 0;
  public static int macedoniansKilled = 0;
  public static int level = 0;
- public static int score = 0;
  
- public static void reset(){
+ public static void resetKills(){
      persiansKilled = 0;
      macedoniansKilled = 0;
  }
@@ -21,7 +17,7 @@ public class GameStats
  }
  
  public static void incrMacedoniansKilled(){
-     persiansKilled ++;
+     macedoniansKilled ++;
  }
  
  

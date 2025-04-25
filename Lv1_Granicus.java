@@ -1,68 +1,56 @@
 import greenfoot.*;
 
-public class Lv1_Granicus extends World
+/**
+ * The battle map of the first level, representing the Battle of river Granicus.
+ * Creates the map, and sets the victory and defeat conditions.
+ */
+public class Lv1_Granicus extends Level
 {
-    private BattleUnit selectedUnit;
     private String battleStatus = "playing";
     private boolean soundPlayed = false;
-    
+    private Alexander alexander = new Alexander();
 
     public Lv1_Granicus()
     {    
-        super(1000, 700, 1); 
-
-        prepare();
-    }
-    
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
-    private void prepare()
-    {
-        Alexander alexander = new Alexander();
-        addObject(alexander,885,561);
+        addObject(alexander,882,576);
         Companions companions = new Companions();
-        addObject(companions,790,562);
-        Sarissophoroi sarissophoroi = new Sarissophoroi();
-        addObject(sarissophoroi,152,564);
-        Sarissophoroi sarissophoroi2 = new Sarissophoroi();
-        addObject(sarissophoroi2,242,559);
-        sarissophoroi2.setLocation(261,557);
-        Sarissophoroi sarissophoroi3 = new Sarissophoroi();
-        addObject(sarissophoroi3,336,555);
-        Sarissophoroi sarissophoroi4 = new Sarissophoroi();
-        addObject(sarissophoroi4,450,564);
-        sarissophoroi3.setLocation(376,556);
-        sarissophoroi4.setLocation(486,552);
-        Hypaspists hypaspists = new Hypaspists();
-        addObject(hypaspists,629,556);
-        PersianCavalry persianCavalry = new PersianCavalry();
-        addObject(persianCavalry,931,186);
-        PersianCavalry persianCavalry2 = new PersianCavalry();
-        addObject(persianCavalry2,803,154);
-        PersianCavalry persianCavalry3 = new PersianCavalry();
-        addObject(persianCavalry3,635,151);
-        PersianCavalry persianCavalry4 = new PersianCavalry();
-        addObject(persianCavalry4,472,150);
-        PersianCavalry persianCavalry5 = new PersianCavalry();
-        addObject(persianCavalry5,308,162);
-        PersianCavalry persianCavalry6 = new PersianCavalry();
-        addObject(persianCavalry6,155,174);
-        PersianInfantry persianInfantry = new PersianInfantry();
-        addObject(persianInfantry,734,49);
-        PersianInfantry persianInfantry2 = new PersianInfantry();
-        addObject(persianInfantry2,555,64);
-        PersianInfantry persianInfantry3 = new PersianInfantry();
-        addObject(persianInfantry3,393,58);
-        PersianInfantry persianInfantry4 = new PersianInfantry();
-        addObject(persianInfantry4,236,63);
+        addObject(companions,788,614);
         Companions companions2 = new Companions();
-        addObject(companions2,699,633);
-        hypaspists.setLocation(583,609);
-        companions2.setLocation(676,560);
+        addObject(companions2,679,605);
+        Sarissophoroi sarissophoroi = new Sarissophoroi();
+        addObject(sarissophoroi,519,598);
+        Sarissophoroi sarissophoroi2 = new Sarissophoroi();
+        addObject(sarissophoroi2,420,598);
+        Sarissophoroi sarissophoroi3 = new Sarissophoroi();
+        addObject(sarissophoroi3,308,598);
+        Sarissophoroi sarissophoroi4 = new Sarissophoroi();
+        addObject(sarissophoroi4,191,598);
+        Hypaspists hypaspists = new Hypaspists();
+        addObject(hypaspists,591,667);
+        PersianCavalry persianCavalry = new PersianCavalry();
+        addObject(persianCavalry,900,160);
+        PersianCavalry persianCavalry2 = new PersianCavalry();
+        addObject(persianCavalry2,774,162);
+        PersianCavalry persianCavalry3 = new PersianCavalry();
+        addObject(persianCavalry3,662,160);
+        PersianCavalry persianCavalry4 = new PersianCavalry();
+        addObject(persianCavalry4,526,178);
+        PersianCavalry persianCavalry5 = new PersianCavalry();
+        addObject(persianCavalry5,385,182);
+        PersianCavalry persianCavalry6 = new PersianCavalry();
+        addObject(persianCavalry6,219,215);
+        PersianInfantry persianInfantry = new PersianInfantry();
+        addObject(persianInfantry,738,34);
+        PersianInfantry persianInfantry2 = new PersianInfantry();
+        addObject(persianInfantry2,608,38);
+        PersianInfantry persianInfantry3 = new PersianInfantry();
+        addObject(persianInfantry3,458,42);
+        PersianInfantry persianInfantry4 = new PersianInfantry();
+        addObject(persianInfantry4,323,44);
+        PersianInfantry persianInfantry5 = new PersianInfantry();
+        addObject(persianInfantry5,182,51);
     }
-    
+        
     public void act(){
         if(battleStatus.equals("playing")){
             checkUnitMovement();
@@ -81,65 +69,29 @@ public class Lv1_Granicus extends World
         else if(battleStatus.equals("defeat")){
             showText("Defeat...Click to return to Main Menu", getWidth()/2, getHeight()/2);
             if(soundPlayed == false){
-                Greenfoot.playSound("defeat.mp3");;
+                Greenfoot.playSound("defeat.mp3");
                 soundPlayed = true;
             }
-
-            if(Greenfoot.mouseClicked(null)){
-                Greenfoot.setWorld(new MenuScreen());
-            }
+            
+            addObject(new ReplayButton(), getWidth()/2, (getHeight()/2 + 20));
+            addObject(new ReturnToMenuButton(), getWidth()/2, (getHeight()/2 + 100));
         }
+        
         checkBattleStatus();
-    
     }
     
-    public void checkUnitMovement(){
-        if(selectedUnit != null){
-            if(Greenfoot.isKeyDown("left")){
-                selectedUnit.setRotation(selectedUnit.getRotation() -5);
-                if(selectedUnit.getMovingState() == 1){
-                    selectedUnit.newMovement(new Vector(selectedUnit.getRotation()-90,0.3));
-                }
-                else if(selectedUnit.getMovingState() == 2){
-                    selectedUnit.newMovement(new Vector(selectedUnit.getRotation()+90,0.1));
-                }
-            }
-            
-            if(Greenfoot.isKeyDown("right")){
-                selectedUnit.setRotation(selectedUnit.getRotation() + 5);
-                if(selectedUnit.getMovingState() == 1){
-                    selectedUnit.newMovement(new Vector(selectedUnit.getRotation()-90,0.3));
-                }
-                else if(selectedUnit.getMovingState() == 2){
-                    selectedUnit.newMovement(new Vector(selectedUnit.getRotation()+90,0.1));
-                }
-            }
-
-              if(Greenfoot.isKeyDown("up")){
-                selectedUnit.newMovement(new Vector(selectedUnit.getRotation()-90,0.3 ));
-                selectedUnit.setMovingState(1);
-            }
-            
-            if(Greenfoot.isKeyDown("down")){
-                selectedUnit.newMovement(new Vector(selectedUnit.getRotation()+90,0.1));
-                selectedUnit.setMovingState(2);
-            }
-            if(Greenfoot.isKeyDown("backspace")){
-                selectedUnit.stop();
-                selectedUnit.setMovingState(0);
-            }
-        }
-    }
     public void checkBattleStatus(){
-        if(GameStats.persiansKilled >= 10){
+        
+        if(alexander.getHealth() <= 0){
+            battleStatus = "defeat";
+        }
+        
+        if(GameStats.persiansKilled >= 11){
             battleStatus = "victory";            
         }
+        
         if(GameStats.macedoniansKilled >= 8){
             battleStatus = "defeat";
         }
-    }
-    
-    public void setSelectedUnit(BattleUnit unit){
-        selectedUnit = unit;
     }
 }

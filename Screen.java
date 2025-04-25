@@ -1,18 +1,9 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import greenfoot.*;  
 /**
- * Write a description of class Screen here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Simple superclass for all the Screens of the game.
  */
 public class Screen extends World
 {
-
-    /**
-     * Constructor for objects of class Screen.
-     * 
-     */
     public Screen()
     {    
 

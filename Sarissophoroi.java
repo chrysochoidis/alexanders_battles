@@ -1,5 +1,8 @@
 import greenfoot.*; 
-
+/**
+ * Class representing the Sarissa phalanx. Creates a battle unit with 
+ * certain specs and loads its images
+ */
 public class Sarissophoroi extends BattleUnit
 {
     public Sarissophoroi(){
@@ -19,7 +22,6 @@ public class Sarissophoroi extends BattleUnit
             move();
             checkIfSelected();
             checkCollision();
-            checkHealthState();
             updateImage(60);
         }
     }

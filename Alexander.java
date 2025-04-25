@@ -1,5 +1,8 @@
 import greenfoot.*;
-
+/**
+ * Class representing Alexander the Great. Creates a battle unit with 
+ * certain specs and loads its images
+ */
 public class Alexander extends BattleUnit
 {
     public Alexander(){
@@ -19,7 +22,6 @@ public class Alexander extends BattleUnit
             move();
             checkIfSelected();
             checkCollision();
-            checkHealthState();
             updateImage(120);
         }
     }

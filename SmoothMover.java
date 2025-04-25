@@ -1,10 +1,8 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
 /**
- * Write a description of class SmoothMover here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Class that handles the movement of the actors. 
+ * Credits : Newtons lab Greenfoot Project - lecture 3
  */
 public class SmoothMover extends Actor
 {
@@ -35,8 +33,6 @@ public class SmoothMover extends Actor
         super.setLocation((int) exactX, (int) exactY);
     }
     
-
-
     /**
      * Set the location using exact (double) co-ordinates.
      */

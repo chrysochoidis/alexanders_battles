@@ -1,5 +1,8 @@
 import greenfoot.*; 
-
+/**
+ * Class representing Darius the III. Creates a battle unit with 
+ * certain specs and loads its images
+ */
 public class Darius extends BattleUnit
 {
     public Darius(){
@@ -17,7 +20,6 @@ public class Darius extends BattleUnit
         else{
             move();
             checkCollision();
-            checkHealthState();
             updateImage(110);
         }  
     }

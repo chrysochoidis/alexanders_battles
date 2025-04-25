@@ -1,5 +1,8 @@
 import greenfoot.*;
-
+/**
+ * Class representing Persian Immortals. Creates a battle unit with 
+ * certain specs and loads its images
+ */
 public class Immortals extends BattleUnit
 {
     public Immortals(){
@@ -17,7 +20,6 @@ public class Immortals extends BattleUnit
         else{
             move();
             checkCollision();
-            checkHealthState();
             updateImage(100);        
         }      
     }

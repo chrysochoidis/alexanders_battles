@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Lv3_Gaugamela
+comment0.text=\r\n\ The\ battle\ map\ of\ the\ third\ level,\ representing\ the\ battle\ of\ Gaugamela.\r\n\ Creates\ the\ map,\ and\ sets\ the\ victory\ and\ defeat\ conditions\r\n
 comment1.params=
 comment1.target=Lv3_Gaugamela()
 comment2.params=
@@ -7,9 +8,5 @@ comment2.target=void\ prepare()
 comment3.params=
 comment3.target=void\ act()
 comment4.params=
-comment4.target=void\ checkUnitMovement()
-comment5.params=
-comment5.target=void\ checkBattleStatus()
-comment6.params=unit
-comment6.target=void\ setSelectedUnit(BattleUnit)
-numComments=7
+comment4.target=void\ checkBattleStatus()
+numComments=5

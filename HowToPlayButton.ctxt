@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=HowToPlayButton
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ HowToPlayButton\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Creates\ the\ How\ to\ Play\ Button\ to\ display\ the\ How\ To\ Play\ Screen\r\n
 comment1.params=
 comment1.target=HowToPlayButton()
 comment2.params=

@@ -1,27 +1,20 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 
 /**
- * Write a description of class HowToPlayScreen here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Screen that shows the game controllers
  */
 public class HowToPlayScreen extends Screen
 {
-
-    /**
-     * Constructor for objects of class HowToPlayScreen.
-     * 
-     */
     public HowToPlayScreen()
     {    
-        showText("Your goal is to defeat the Persian army in every battle.\n" +
-        "Select each unit individually by clicking on it.\n" +
-        "Up Arrow - unit moves forward\n" +
-        "Down Arrow - unit moves backwards\n" +
-        "Left Arrow - unit rotates left\n" +
-        "Right Arrow - unit rotates right\n"+
-        "Backspace - unit halts" ,getWidth()/2, getHeight()/2);
+        showText("Στόχος σου είναι να νικήσεις τους Πέρσες σε όλες τις μάχες.\n" +
+        "Επέλεξε κάθε μονάδα χωριστά κάνονταςν πάνω της κλικ.\n" +
+        "Επάνω βέλος - η μονάδα κινείται προς τα ΕΜΠΡΟΣ\n" +
+        "Κάτω βέλος - η μονάδα κινείται προς τα ΠΙΣΩ\n" +
+        "Αριστερό βέλος - η μονάδα περιστρέφεται προς τα ΑΡΙΣΤΕΡΑ\n" +
+        "Δεξί βέλος - η μονάδα περιστρέφεται προς τα ΔΕΞΙΑ\n"+
+        "Backspace - η μονάδα ακινητοποιείται\n" +
+        "ΠΡΟΣΟΧΗ! Αν πεθάνει ο Αλέξανδρος τότε αυτόματα χάνεται η μάχη" ,getWidth()/2, getHeight()/2);
         addObject(new BackButton(), getWidth()/2, (getHeight()/2 + 200));
     }
 }

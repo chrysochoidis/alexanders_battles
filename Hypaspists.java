@@ -1,5 +1,8 @@
 import greenfoot.*;
-
+/**
+ * Class representing the Hypaspists. Creates a battle unit with 
+ * certain specs and loads its images
+ */
 public class Hypaspists extends BattleUnit
 {
     public Hypaspists(){
@@ -19,7 +22,6 @@ public class Hypaspists extends BattleUnit
             move();
             checkIfSelected();
             checkCollision();
-            checkHealthState();
             updateImage(65);
        
         }

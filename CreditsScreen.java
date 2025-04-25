@@ -1,15 +1,10 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
 /**
- * Write a description of class CreditsScreen here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Screen that shows some information about the game
  */
 public class CreditsScreen extends Screen
 {
-
-
     public CreditsScreen()
     {    
         showText("Το 'Alexander's Battles' αποτελεί παιχνίδι σοβαρού σκοπού\n" + 

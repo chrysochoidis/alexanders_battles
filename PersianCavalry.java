@@ -1,5 +1,8 @@
 import greenfoot.*;
-
+/**
+ * Class representing the Persian Cavalry. Creates a battle unit with 
+ * certain specs and loads its images
+ */
 public class PersianCavalry extends BattleUnit
 {
     public PersianCavalry(){
@@ -17,7 +20,6 @@ public class PersianCavalry extends BattleUnit
         else{
             move();
             checkCollision();
-            checkHealthState();
             updateImage(75);
         }     
     }
