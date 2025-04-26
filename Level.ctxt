@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Level
-comment0.text=\r\n\ Superclass\ of\ all\ the\ Battle\ maps.\ Handles\ the\ unit\ movements\r\n
+comment0.text=\r\n\ Superclass\ of\ all\ the\ Battle\ maps.\ Handles\ the\ unit\ movements\ and\ has\ sound\ methods\r\n
 comment1.params=
 comment1.target=Level()
 comment2.params=

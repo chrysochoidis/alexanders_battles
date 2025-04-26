@@ -88,13 +88,16 @@ public class Lv1_Granicus extends Level
         checkTipTimer();
     }
 
+    /**
+     * checking the status of the battle depending the situation
+     */
     public void checkBattleStatus(){
 
         if(alexander.getHealth() <= 0){
             battleStatus = "defeat";
         }
 
-        if(GameStats.persiansKilled >= 1){
+        if(GameStats.persiansKilled >= 11){
             battleStatus = "victory";            
         }
 
@@ -103,6 +106,9 @@ public class Lv1_Granicus extends Level
         }
     }
     
+    /**
+     * sets the tip to be displayed for a certain time
+     */
     public void checkTipTimer(){
         if(timer >= 1000){
             this.removeObject(tip);

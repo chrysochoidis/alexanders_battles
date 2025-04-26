@@ -1,17 +1,17 @@
 #BlueJ class context
 comment0.target=Lv3_Gaugamela
-comment0.text=\r\n\ The\ battle\ map\ of\ the\ third\ level,\ representing\ the\ battle\ of\ Gaugamela.\r\n\ Creates\ the\ map,\ and\ sets\ the\ victory\ and\ defeat\ conditions\r\n
+comment0.text=\r\n\ The\ battle\ map\ of\ the\ third\ level,\ representing\ the\ battle\ of\ Gaugamela.\r\n\ Creates\ the\ map,\ and\ sets\ the\ victory\ and\ defeat\ conditions.\r\n\ Makes\ some\ persian\ movement\r\n
 comment1.params=
 comment1.target=Lv3_Gaugamela()
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ checkBattleStatus()
+comment3.text=\r\n\ checking\ the\ status\ of\ the\ battle\ depending\ the\ situation\r\n
 comment4.params=
 comment4.target=void\ checkTipTimer()
+comment4.text=\r\n\ sets\ the\ tip\ to\ be\ displayed\ for\ a\ certain\ time\r\n
 comment5.params=
 comment5.target=void\ persianMovement()
-comment6.params=
-comment6.target=void\ prepare()
-comment6.text=\r\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\r\n\ That\ is\:\ create\ the\ initial\ objects\ and\ add\ them\ to\ the\ world.\r\n
-numComments=7
+comment5.text=\r\n\ dummy\ movement\ for\ some\ persian\ units,\ depending\ their\ role\r\n
+numComments=6

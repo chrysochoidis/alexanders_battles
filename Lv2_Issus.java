@@ -4,11 +4,13 @@ import java.util.*;
 /**
  * The battle map of the second level, representing the Battle of Issus.
  * Creates the map, and sets the victory and defeat conditions.
+ * Makes some persian movement
  */
 public class Lv2_Issus extends Level
 {
     private String battleStatus = "playing";
     private boolean soundPlayed = false;
+    
     //tip variables
     private int timer = 0;
     Tip tip = new Tip();
@@ -139,6 +141,9 @@ public class Lv2_Issus extends Level
         persianMovement();
     }
 
+     /**
+     * checking the status of the battle depending the situation
+     */
     public void checkBattleStatus(){
         if(alexander.getHealth() <= 0){
             battleStatus = "defeat";
@@ -153,12 +158,18 @@ public class Lv2_Issus extends Level
         }
     }
 
+    /**
+     * sets the tip to be displayed for a certain time
+     */
     public void checkTipTimer(){
         if(timer >= 1000){
             this.removeObject(tip);
         }
     }
-
+    
+    /**
+     * dummy movement for some persian units, depending their role
+     */
     public void persianMovement(){
         for(BattleUnit b : persians){
             if(timer<4500){

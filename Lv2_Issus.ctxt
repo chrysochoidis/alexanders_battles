@@ -1,14 +1,17 @@
 #BlueJ class context
 comment0.target=Lv2_Issus
-comment0.text=\r\n\ The\ battle\ map\ of\ the\ second\ level,\ representing\ the\ Battle\ of\ Issus.\r\n\ Creates\ the\ map,\ and\ sets\ the\ victory\ and\ defeat\ conditions.\r\n
+comment0.text=\r\n\ The\ battle\ map\ of\ the\ second\ level,\ representing\ the\ Battle\ of\ Issus.\r\n\ Creates\ the\ map,\ and\ sets\ the\ victory\ and\ defeat\ conditions.\r\n\ \r\n
 comment1.params=
 comment1.target=Lv2_Issus()
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ checkBattleStatus()
+comment3.text=\r\n\ checking\ the\ status\ of\ the\ battle\ depending\ the\ situation\r\n
 comment4.params=
 comment4.target=void\ checkTipTimer()
+comment4.text=\r\n\ sets\ the\ tip\ to\ be\ displayed\ for\ a\ certain\ time\r\n
 comment5.params=
 comment5.target=void\ persianMovement()
+comment5.text=\r\n\ dummy\ movement\ for\ some\ persian\ units,\ depending\ their\ role\r\n
 numComments=6

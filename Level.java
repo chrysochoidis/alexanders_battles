@@ -1,10 +1,11 @@
 import greenfoot.*; 
 
 /**
- * Superclass of all the Battle maps. Handles the unit movements
+ * Superclass of all the Battle maps. Handles the unit movements and has sound methods
  */
 public class Level extends World
 {
+    //common variables for all worlds
     private BattleUnit selectedUnit;
     private GreenfootSound battleSound = new GreenfootSound("battle.mp3");
     private GreenfootSound victorySound = new GreenfootSound("victory.mp3");
