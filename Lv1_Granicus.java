@@ -9,6 +9,8 @@ public class Lv1_Granicus extends Level
     private String battleStatus = "playing";
     private boolean soundPlayed = false;
     private Alexander alexander = new Alexander();
+    private int timer = 0;
+    Tip tip = new Tip();
 
     public Lv1_Granicus()
     {    
@@ -50,8 +52,8 @@ public class Lv1_Granicus extends Level
         PersianInfantry persianInfantry5 = new PersianInfantry();
         addObject(persianInfantry5,269,49);
         
-        Tip tip = new Tip();
         addObject(tip, 100, 75);
+        playBattleSound();
     }
 
     public void act(){
@@ -59,9 +61,10 @@ public class Lv1_Granicus extends Level
             checkUnitMovement();
         }
         else if(battleStatus.equals("victory")){
+            stopBattleSound();
             showText("Νίκησες!!! Κάνε κλικ για την συνέχεια", getWidth()/2, getHeight()/2);
             if(soundPlayed == false){
-                Greenfoot.playSound("victory.mp3");
+                playVictorySound();
                 soundPlayed = true;
             }
 
@@ -70,17 +73,19 @@ public class Lv1_Granicus extends Level
             }
         }
         else if(battleStatus.equals("defeat")){
+            stopBattleSound();
             showText("Έχασες...", getWidth()/2, getHeight()/2);
             if(soundPlayed == false){
-                Greenfoot.playSound("defeat.mp3");
+                playDefeatSound();
                 soundPlayed = true;
             }
 
             addObject(new ReplayButton(), (getWidth()/2 + 50), (getHeight()/2 + 40));
             addObject(new ReturnToMenuButton(), (getWidth()/2 + 40), (getHeight()/2 + 100));
         }
-
+        timer++;
         checkBattleStatus();
+        checkTipTimer();
     }
 
     public void checkBattleStatus(){
@@ -89,7 +94,7 @@ public class Lv1_Granicus extends Level
             battleStatus = "defeat";
         }
 
-        if(GameStats.persiansKilled >= 11){
+        if(GameStats.persiansKilled >= 1){
             battleStatus = "victory";            
         }
 
@@ -97,4 +102,11 @@ public class Lv1_Granicus extends Level
             battleStatus = "defeat";
         }
     }
+    
+    public void checkTipTimer(){
+        if(timer >= 1000){
+            this.removeObject(tip);
+        }
+    }
+    
 }

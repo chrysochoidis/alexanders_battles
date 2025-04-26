@@ -6,7 +6,7 @@ import greenfoot.*;
 public class Alexander extends BattleUnit
 {
     public Alexander(){
-        super(5,12,120,"Macedonia");
+        super(5,12,240,"Macedonia");
         loadImages(new GreenfootImage("alexander0_S.png"), new GreenfootImage("alexander0_M.png"),
         new GreenfootImage("alexander1_S.png"), new GreenfootImage("alexander1_M.png"),
         new GreenfootImage("alexander2_S.png"), new GreenfootImage("alexander2_M.png"));

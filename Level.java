@@ -6,6 +6,9 @@ import greenfoot.*;
 public class Level extends World
 {
     private BattleUnit selectedUnit;
+    private GreenfootSound battleSound = new GreenfootSound("battle.mp3");
+    private GreenfootSound victorySound = new GreenfootSound("victory.mp3");
+    private GreenfootSound defeatSound = new GreenfootSound("defeat.mp3");
     
     public Level()
     {    
@@ -52,6 +55,22 @@ public class Level extends World
                 selectedUnit.setMovingState(0);
             }
         }
+    }
+        
+    public void playBattleSound(){
+        battleSound.play();
+    }
+    
+    public void stopBattleSound(){
+        battleSound.stop();
+    }
+    
+    public void playDefeatSound(){
+        defeatSound.play();
+    }
+    
+    public void playVictorySound(){
+        victorySound.play();
     }
     
      public void setSelectedUnit(BattleUnit unit){

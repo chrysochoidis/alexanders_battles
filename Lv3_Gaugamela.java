@@ -1,4 +1,5 @@
 import greenfoot.*;
+import java.util.*;
 /**
  * The battle map of the third level, representing the battle of Gaugamela.
  * Creates the map, and sets the victory and defeat conditions
@@ -7,47 +8,35 @@ public class Lv3_Gaugamela extends Level
 {
     private String battleStatus = "playing";
     private boolean soundPlayed = false;
+    //tip variables
+    private int timer = 0;
+    Tip tip = new Tip(); 
+    //units variables
     Alexander alexander = new Alexander();
-    Darius darius = new Darius();
+
+    //persians 1
+
+    private ArrayList<BattleUnit> persians = new ArrayList<BattleUnit>();
+
+    //persians 2
+    private Darius darius = new Darius();
+    private Immortals immortals = new Immortals();
+    private Immortals immortals2 = new Immortals();
+    private Immortals immortals3 = new Immortals();
+    private PersianInfantry persianInfantry = new PersianInfantry();
+    private PersianInfantry persianInfantry2 = new PersianInfantry();
+    private PersianCavalry persianCavalry = new PersianCavalry();
+    private PersianCavalry persianCavalry2 = new PersianCavalry();
+    private PersianInfantry persianInfantry3 = new PersianInfantry();
+    private ArrayList<BattleUnit> persians2 = new ArrayList<BattleUnit>();
 
     public Lv3_Gaugamela()
     {    
         GameStats.resetKills();
         GameStats.level = 3;
+        playBattleSound();
         
-        addObject(darius,464,63);
-        PersianCavalry persianCavalry = new PersianCavalry();
-        addObject(persianCavalry,949,91);
-        PersianCavalry persianCavalry2 = new PersianCavalry();
-        addObject(persianCavalry2,857,92);
-        PersianCavalry persianCavalry3 = new PersianCavalry();
-        addObject(persianCavalry3,774,92);
-        PersianCavalry persianCavalry4 = new PersianCavalry();
-        addObject(persianCavalry4,683,93);
-        Immortals immortals = new Immortals();
-        addObject(immortals,679,21);
-        Immortals immortals2 = new Immortals();
-        addObject(immortals2,793,27);
-        Immortals immortals3 = new Immortals();
-        addObject(immortals3,920,26);
-        Immortals immortals4 = new Immortals();
-        addObject(immortals4,362,50);
-        Immortals immortals5 = new Immortals();
-        addObject(immortals5,262,50);
-        Immortals immortals6 = new Immortals();
-        addObject(immortals6,573,61);
-        PersianInfantry persianInfantry = new PersianInfantry();
-        addObject(persianInfantry,587,142);
-        PersianInfantry persianInfantry2 = new PersianInfantry();
-        addObject(persianInfantry2,485,147);
-        PersianInfantry persianInfantry3 = new PersianInfantry();
-        addObject(persianInfantry3,380,149);
-        PersianInfantry persianInfantry4 = new PersianInfantry();
-        addObject(persianInfantry4,294,148);
-        PersianInfantry persianInfantry5 = new PersianInfantry();
-        addObject(persianInfantry5,209,148);
-        PersianInfantry persianInfantry6 = new PersianInfantry();
-        addObject(persianInfantry6,118,150);
+        //macedonias
         Sarissophoroi sarissophoroi = new Sarissophoroi();
         addObject(sarissophoroi,108,500);
         Sarissophoroi sarissophoroi2 = new Sarissophoroi();
@@ -69,23 +58,39 @@ public class Lv3_Gaugamela extends Level
         Companions companions3 = new Companions();
         addObject(companions3,814,560);
         addObject(alexander,628,501);
-        PersianInfantry persianInfantry7 = new PersianInfantry();
-        addObject(persianInfantry7,162,18);
-        PersianInfantry persianInfantry8 = new PersianInfantry();
-        addObject(persianInfantry8,66,19);
         
-        Tip tip = new Tip();
+        //persians2
+        addObject(darius,488,30);
+        addObject(immortals,383,30);
+        addObject(immortals2,265,33);
+        addObject(immortals3,605,31);
+        addObject(persianInfantry,161,33);
+        addObject(persianInfantry2,723,34);
+        addObject(persianCavalry,932,40);
+        addObject(persianCavalry2,827,42);
+        addObject(persianInfantry3,65,32);
+        persians2.add(immortals);
+        persians2.add(immortals2);
+        persians2.add(immortals3);
+        persians2.add(persianInfantry);
+        persians2.add(persianInfantry2);
+        persians2.add(persianCavalry);
+        persians2.add(persianCavalry2);
+        persians2.add(persianInfantry3);
+        
         addObject(tip, 100, 75);
+        prepare();
     }
 
     public void act(){
         if(battleStatus.equals("playing")){
-             checkUnitMovement();
+            checkUnitMovement();
         }
         else if(battleStatus.equals("victory")){
+            stopBattleSound();
             showText("Νίκησες!!! Κάνε κλικ για την συνέχεια", getWidth()/2, getHeight()/2);
             if(soundPlayed == false){
-                Greenfoot.playSound("victory.mp3");
+                playVictorySound();
                 soundPlayed = true;
             }
 
@@ -94,16 +99,21 @@ public class Lv3_Gaugamela extends Level
             }
         }
         else if(battleStatus.equals("defeat")){
+            stopBattleSound();
             showText("Έχασες...", getWidth()/2, getHeight()/2);
             if(soundPlayed == false){
-                Greenfoot.playSound("defeat.mp3");;
+                playDefeatSound();
                 soundPlayed = true;
             }
 
             addObject(new ReplayButton(), (getWidth()/2+ 50), (getHeight()/2 + 40));
             addObject(new ReturnToMenuButton(), (getWidth()/2 + 40), (getHeight()/2 + 100));
         }
+
+        timer++;
         checkBattleStatus();
+        checkTipTimer();
+        persianMovement();
     }
 
     public void checkBattleStatus(){
@@ -123,5 +133,44 @@ public class Lv3_Gaugamela extends Level
         if(GameStats.macedoniansKilled >= 13){
             battleStatus = "defeat";
         }
+    }
+
+    public void checkTipTimer(){
+        if(timer >= 1000){
+            this.removeObject(tip);
+        }
+    }
+
+    public void persianMovement(){
+        for(BattleUnit b : persians){
+            if(timer<4500){
+                b.newMovement(new Vector(b.getRotation()+90,0.05));
+                b.setMovingState(2);
+            }
+            else{
+                b.stop();
+                b.setMovingState(0); 
+            }
+        }
+
+        for(BattleUnit b : persians2){
+            if(timer<=1000){
+                b.newMovement(new Vector(b.getRotation()+90,0.05));
+                b.setMovingState(2);
+            }
+            else{
+                b.stop();
+                b.setMovingState(0);
+            }
+        }
+    }
+
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+      
     }
 }

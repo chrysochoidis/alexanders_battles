@@ -6,7 +6,7 @@ import greenfoot.*;
 public class Hypaspists extends BattleUnit
 {
     public Hypaspists(){
-        super(6,6,65,"Macedonia");
+        super(6,6,130,"Macedonia");
         loadImages(new GreenfootImage("hypaspists0_S.png"), new GreenfootImage("hypaspists0_M.png"),
         new GreenfootImage("hypaspists1_S.png"), new GreenfootImage("hypaspists1_M.png"),
         new GreenfootImage("hypaspists2_S.png"), new GreenfootImage("hypaspists2_M.png"));

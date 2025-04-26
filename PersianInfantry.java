@@ -6,7 +6,7 @@ import greenfoot.*;
 public class PersianInfantry extends BattleUnit
 {
     public PersianInfantry(){
-        super(3,5,55,"Persia");
+        super(3,5,100,"Persia");
         loadImages(new GreenfootImage("persian_inf0_S.png"), new GreenfootImage("persian_inf0_M.png"),
         new GreenfootImage("persian_inf1_S.png"), new GreenfootImage("persian_inf1_M.png"),
         new GreenfootImage("persian_inf2_S.png"), new GreenfootImage("persian_inf2_M.png"));

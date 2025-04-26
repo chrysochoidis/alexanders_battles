@@ -6,7 +6,7 @@ import greenfoot.*;
 public class Companions extends BattleUnit
 {
       public Companions(){
-        super(4,7,80,"Macedonia");
+        super(4,7,160,"Macedonia");
         loadImages(new GreenfootImage("companion0_S.png"), new GreenfootImage("companion0_M.png"),
         new GreenfootImage("companion1_S.png"), new GreenfootImage("companion1_M.png"),
         new GreenfootImage("companion2_S.png"), new GreenfootImage("companion2_M.png"));

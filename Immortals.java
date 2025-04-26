@@ -6,7 +6,7 @@ import greenfoot.*;
 public class Immortals extends BattleUnit
 {
     public Immortals(){
-        super(7,8,100,"Persia");
+        super(7,8,200,"Persia");
         loadImages(new GreenfootImage("immortals0_S.png"), new GreenfootImage("immortals0_M.png"),
         new GreenfootImage("immortals1_S.png"), new GreenfootImage("immortals1_M.png"),
         new GreenfootImage("immortals2_S.png"), new GreenfootImage("immortals2_M.png"));
