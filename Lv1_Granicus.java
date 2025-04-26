@@ -12,84 +12,87 @@ public class Lv1_Granicus extends Level
 
     public Lv1_Granicus()
     {    
-        addObject(alexander,882,576);
+        addObject(alexander,879,516);
         Companions companions = new Companions();
-        addObject(companions,788,614);
+        addObject(companions,786,519);
         Companions companions2 = new Companions();
-        addObject(companions2,679,605);
+        addObject(companions2,700,520);
         Sarissophoroi sarissophoroi = new Sarissophoroi();
-        addObject(sarissophoroi,519,598);
+        addObject(sarissophoroi,569,522);
         Sarissophoroi sarissophoroi2 = new Sarissophoroi();
-        addObject(sarissophoroi2,420,598);
+        addObject(sarissophoroi2,455,523);
         Sarissophoroi sarissophoroi3 = new Sarissophoroi();
-        addObject(sarissophoroi3,308,598);
+        addObject(sarissophoroi3,341,527);
         Sarissophoroi sarissophoroi4 = new Sarissophoroi();
-        addObject(sarissophoroi4,191,598);
+        addObject(sarissophoroi4,222,523);
         Hypaspists hypaspists = new Hypaspists();
-        addObject(hypaspists,591,667);
+        addObject(hypaspists,97,525);
         PersianCavalry persianCavalry = new PersianCavalry();
-        addObject(persianCavalry,900,160);
+        addObject(persianCavalry,898,144);
         PersianCavalry persianCavalry2 = new PersianCavalry();
-        addObject(persianCavalry2,774,162);
+        addObject(persianCavalry2,783,132);
         PersianCavalry persianCavalry3 = new PersianCavalry();
-        addObject(persianCavalry3,662,160);
+        addObject(persianCavalry3,663,129);
         PersianCavalry persianCavalry4 = new PersianCavalry();
-        addObject(persianCavalry4,526,178);
+        addObject(persianCavalry4,545,131);
         PersianCavalry persianCavalry5 = new PersianCavalry();
-        addObject(persianCavalry5,385,182);
+        addObject(persianCavalry5,393,150);
         PersianCavalry persianCavalry6 = new PersianCavalry();
-        addObject(persianCavalry6,219,215);
+        addObject(persianCavalry6,260,167);
         PersianInfantry persianInfantry = new PersianInfantry();
-        addObject(persianInfantry,738,34);
+        addObject(persianInfantry,781,37);
         PersianInfantry persianInfantry2 = new PersianInfantry();
-        addObject(persianInfantry2,608,38);
+        addObject(persianInfantry2,651,47);
         PersianInfantry persianInfantry3 = new PersianInfantry();
-        addObject(persianInfantry3,458,42);
+        addObject(persianInfantry3,518,43);
         PersianInfantry persianInfantry4 = new PersianInfantry();
-        addObject(persianInfantry4,323,44);
+        addObject(persianInfantry4,379,52);
         PersianInfantry persianInfantry5 = new PersianInfantry();
-        addObject(persianInfantry5,182,51);
-    }
+        addObject(persianInfantry5,269,49);
         
+        Tip tip = new Tip();
+        addObject(tip, 100, 75);
+    }
+
     public void act(){
         if(battleStatus.equals("playing")){
             checkUnitMovement();
         }
         else if(battleStatus.equals("victory")){
-            showText("Victory!! Click to continue", getWidth()/2, getHeight()/2);
+            showText("Νίκησες!!! Κάνε κλικ για την συνέχεια", getWidth()/2, getHeight()/2);
             if(soundPlayed == false){
                 Greenfoot.playSound("victory.mp3");
                 soundPlayed = true;
             }
-            
+
             if(Greenfoot.mouseClicked(null)){
                 Greenfoot.setWorld(new StoryScreen());
             }
         }
         else if(battleStatus.equals("defeat")){
-            showText("Defeat...Click to return to Main Menu", getWidth()/2, getHeight()/2);
+            showText("Έχασες...", getWidth()/2, getHeight()/2);
             if(soundPlayed == false){
                 Greenfoot.playSound("defeat.mp3");
                 soundPlayed = true;
             }
-            
-            addObject(new ReplayButton(), getWidth()/2, (getHeight()/2 + 20));
-            addObject(new ReturnToMenuButton(), getWidth()/2, (getHeight()/2 + 100));
+
+            addObject(new ReplayButton(), (getWidth()/2 + 50), (getHeight()/2 + 40));
+            addObject(new ReturnToMenuButton(), (getWidth()/2 + 40), (getHeight()/2 + 100));
         }
-        
+
         checkBattleStatus();
     }
-    
+
     public void checkBattleStatus(){
-        
+
         if(alexander.getHealth() <= 0){
             battleStatus = "defeat";
         }
-        
+
         if(GameStats.persiansKilled >= 11){
             battleStatus = "victory";            
         }
-        
+
         if(GameStats.macedoniansKilled >= 8){
             battleStatus = "defeat";
         }

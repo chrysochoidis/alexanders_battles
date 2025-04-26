@@ -6,11 +6,7 @@ import greenfoot.*;
 public class BackButton extends Button
 {
    public BackButton(){
-        GreenfootImage img = new GreenfootImage(300, 50);
-        img.setColor(Color.BLACK);
-        img.setFont(new Font("Arial", true, false, 24));
-        img.drawString("ΠΙΣΩ", 60, 35);
-        setImage(img);
+        super("ΠΙΣΩ", 30,35);
    }
    
    public void act(){

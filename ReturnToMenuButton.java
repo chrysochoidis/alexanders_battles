@@ -6,11 +6,7 @@ import greenfoot.*;
 public class ReturnToMenuButton extends Button
 {
     public ReturnToMenuButton(){
-        GreenfootImage img = new GreenfootImage(300, 50);
-        img.setColor(new Color(255,215,0));
-        img.setFont(new Font("Arial", true, false, 24));
-        img.drawString("ΑΡΧΙΚΟ ΜΕΝΟΥ", 30, 35);
-        setImage(img);
+       super("ΑΡΧΙΚΟ ΜΕΝΟΥ", 30, 35);
     }
     
     public void act()

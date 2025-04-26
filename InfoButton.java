@@ -6,11 +6,7 @@ import greenfoot.*;
 public class InfoButton extends Button
 {
     public InfoButton(){
-        GreenfootImage img = new GreenfootImage(300, 50);
-        img.setColor(new Color(255,215,0));
-        img.setFont(new Font("Arial", true, false, 24));
-        img.drawString("ΠΛΗΡΟΦΟΡΙΕΣ", 60, 35);
-        setImage(img);
+        super("ΠΛΗΡΟΦΟΡΙΕΣ", 60, 35);
     }
 
     public void act()

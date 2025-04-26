@@ -9,7 +9,7 @@ public class Level extends World
     
     public Level()
     {    
-        super(1000, 700, 1); 
+        super(1000, 600, 1); 
     }
     
     /**
@@ -19,7 +19,7 @@ public class Level extends World
     public void checkUnitMovement(){
         if(selectedUnit != null){
             if(Greenfoot.isKeyDown("left")){
-                selectedUnit.setRotation(selectedUnit.getRotation() -5);
+                selectedUnit.setRotation(selectedUnit.getRotation() -1);
                 if(selectedUnit.getMovingState() == 1){
                     selectedUnit.newMovement(new Vector(selectedUnit.getRotation()-90,0.2));
                 }
@@ -29,7 +29,7 @@ public class Level extends World
             }
             
             if(Greenfoot.isKeyDown("right")){
-                selectedUnit.setRotation(selectedUnit.getRotation() + 5);
+                selectedUnit.setRotation(selectedUnit.getRotation() + 1);
                 if(selectedUnit.getMovingState() == 1){
                     selectedUnit.newMovement(new Vector(selectedUnit.getRotation()-90,0.2));
                 }

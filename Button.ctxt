@@ -1,3 +1,6 @@
 #BlueJ class context
 comment0.target=Button
-numComments=1
+comment0.text=\r\n\ Has\ the\ main\ constuctor\ for\ all\ the\ buttons.\r\n
+comment1.params=text\ width\ height
+comment1.target=Button(java.lang.String,\ int,\ int)
+numComments=2
